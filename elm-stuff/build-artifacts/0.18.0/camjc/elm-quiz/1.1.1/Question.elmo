@@ -1,0 +1,13 @@
+var _camjc$elm_quiz$Question$view = function (question) {
+	return A2(
+		_elm_lang$html$Html$h1,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				function (_) {
+					return _.label;
+				}(question)),
+			_1: {ctor: '[]'}
+		});
+};

@@ -1,0 +1,11 @@
+var _camjc$elm_quiz$QuizTypes$Answer = F3(
+	function (a, b, c) {
+		return {id: a, label: b, value: c};
+	});
+var _camjc$elm_quiz$QuizTypes$Model = F7(
+	function (a, b, c, d, e, f, g) {
+		return {questionId: a, questions: b, correctAnswers: c, wrongAnswers: d, buttonTrue: e, buttonFalse: f, instructionsComponent: g};
+	});
+var _camjc$elm_quiz$QuizTypes$GuessFalse = {ctor: 'GuessFalse'};
+var _camjc$elm_quiz$QuizTypes$GuessTrue = {ctor: 'GuessTrue'};
+var _camjc$elm_quiz$QuizTypes$Start = {ctor: 'Start'};

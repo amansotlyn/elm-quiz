@@ -1,0 +1,11 @@
+var _camjc$elm_quiz$Helpers$getGuessesCount = function (model) {
+	return _elm_lang$core$Array$length(model.correctAnswers) + _elm_lang$core$Array$length(model.wrongAnswers);
+};
+var _camjc$elm_quiz$Helpers$getPercentageCorrect = function (model) {
+	var totalAnswers = _elm_lang$core$Basics$toFloat(
+		_camjc$elm_quiz$Helpers$getGuessesCount(model));
+	var correctAnswers = _elm_lang$core$Basics$toFloat(
+		_elm_lang$core$Array$length(model.correctAnswers));
+	return _elm_lang$core$Basics$round(
+		(correctAnswers / A2(_elm_lang$core$Basics$max, totalAnswers, 1)) * 100);
+};

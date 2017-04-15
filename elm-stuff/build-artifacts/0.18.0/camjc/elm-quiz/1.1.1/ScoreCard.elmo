@@ -1,0 +1,36 @@
+var _camjc$elm_quiz$ScoreCard$scoreComponent = function (model) {
+	var totalAnswers = _elm_lang$core$Basics$toString(
+		_camjc$elm_quiz$Helpers$getGuessesCount(model));
+	var correctAnswers = _elm_lang$core$Basics$toString(
+		_elm_lang$core$Array$length(model.correctAnswers));
+	return A2(
+		_elm_lang$html$Html$h1,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					correctAnswers,
+					A2(_elm_lang$core$Basics_ops['++'], ' out of ', totalAnswers))),
+			_1: {ctor: '[]'}
+		});
+};
+var _camjc$elm_quiz$ScoreCard$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _camjc$elm_quiz$ScoreCard$scoreComponent(model),
+			_1: {
+				ctor: '::',
+				_0: _camjc$elm_quiz$PercentCorrect$view(model),
+				_1: {
+					ctor: '::',
+					_0: _camjc$elm_quiz$IncorrectList$view(model),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};

@@ -1,0 +1,16 @@
+var _camjc$elm_quiz$PercentCorrect$getPercentageCorrectString = function (model) {
+	var percentString = _elm_lang$core$Basics$toString(
+		_camjc$elm_quiz$Helpers$getPercentageCorrect(model));
+	return A2(_elm_lang$core$Basics_ops['++'], percentString, '% Correct');
+};
+var _camjc$elm_quiz$PercentCorrect$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				_camjc$elm_quiz$PercentCorrect$getPercentageCorrectString(model)),
+			_1: {ctor: '[]'}
+		});
+};

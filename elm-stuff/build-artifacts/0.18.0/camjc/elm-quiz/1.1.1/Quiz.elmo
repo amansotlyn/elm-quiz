@@ -1,0 +1,103 @@
+var _camjc$elm_quiz$Quiz$getCurrentQuestion = function (model) {
+	var _p0 = A2(_elm_lang$core$Array$get, model.questionId, model.questions);
+	if (_p0.ctor === 'Just') {
+		var _p1 = _p0._0;
+		return {
+			id: model.questionId,
+			value: _elm_lang$core$Tuple$first(_p1),
+			label: _elm_lang$core$Tuple$second(_p1)
+		};
+	} else {
+		return {id: -1, value: false, label: 'End'};
+	}
+};
+var _camjc$elm_quiz$Quiz$isGuessCorrect = F2(
+	function (model, guess) {
+		return _elm_lang$core$Native_Utils.eq(
+			_camjc$elm_quiz$Quiz$getCurrentQuestion(model).value,
+			guess);
+	});
+var _camjc$elm_quiz$Quiz$updateModelWithGuess = F2(
+	function (guess, model) {
+		var currentQuestion = _camjc$elm_quiz$Quiz$getCurrentQuestion(model);
+		var correctGuess = A2(_camjc$elm_quiz$Quiz$isGuessCorrect, model, guess);
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				questionId: model.questionId + 1,
+				correctAnswers: correctGuess ? A2(_elm_lang$core$Array$push, currentQuestion, model.correctAnswers) : model.correctAnswers,
+				wrongAnswers: (!correctGuess) ? A2(_elm_lang$core$Array$push, currentQuestion, model.wrongAnswers) : model.wrongAnswers
+			});
+	});
+var _camjc$elm_quiz$Quiz$update = F2(
+	function (action, model) {
+		var _p2 = action;
+		switch (_p2.ctor) {
+			case 'Start':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{questionId: 0});
+			case 'GuessTrue':
+				return A2(_camjc$elm_quiz$Quiz$updateModelWithGuess, true, model);
+			default:
+				return A2(_camjc$elm_quiz$Quiz$updateModelWithGuess, false, model);
+		}
+	});
+var _camjc$elm_quiz$Quiz$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$style(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'margin', _1: '5rem auto'},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'max-width', _1: '25rem'},
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		_elm_lang$core$Native_Utils.eq(model.questionId, -1) ? {
+			ctor: '::',
+			_0: model.instructionsComponent,
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_camjc$elm_quiz$Button$view,
+					{ctor: '_Tuple2', _0: 'Start', _1: 'green'},
+					_camjc$elm_quiz$QuizTypes$Start),
+				_1: {ctor: '[]'}
+			}
+		} : (_elm_lang$core$Native_Utils.eq(
+			_camjc$elm_quiz$Quiz$getCurrentQuestion(model).label,
+			'End') ? {
+			ctor: '::',
+			_0: _camjc$elm_quiz$EndMessage$view(
+				_camjc$elm_quiz$Helpers$getPercentageCorrect(model)),
+			_1: {
+				ctor: '::',
+				_0: _camjc$elm_quiz$ScoreCard$view(model),
+				_1: {ctor: '[]'}
+			}
+		} : {
+			ctor: '::',
+			_0: _camjc$elm_quiz$Question$view(
+				_camjc$elm_quiz$Quiz$getCurrentQuestion(model)),
+			_1: {
+				ctor: '::',
+				_0: A2(_camjc$elm_quiz$Button$view, model.buttonTrue, _camjc$elm_quiz$QuizTypes$GuessTrue),
+				_1: {
+					ctor: '::',
+					_0: A2(_camjc$elm_quiz$Button$view, model.buttonFalse, _camjc$elm_quiz$QuizTypes$GuessFalse),
+					_1: {
+						ctor: '::',
+						_0: _camjc$elm_quiz$ScoreCard$view(model),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}));
+};

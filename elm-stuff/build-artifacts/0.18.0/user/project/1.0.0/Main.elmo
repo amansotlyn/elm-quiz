@@ -1,0 +1,55 @@
+var _user$project$Main$model = {
+	questionId: -1,
+	questions: _elm_lang$core$Array$fromList(
+		{
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: true, _1: 'Gersh loves it when we chant his name.'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: true, _1: 'Jared\'s secret identity is Tarf.'},
+				_1: {
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: false, _1: 'Jason never interupts people when they are talking.'},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: false, _1: 'Kaitlyn computer can use AirPlay.'},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: true, _1: 'Amanda loves craft beers.'},
+							_1: {
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: true, _1: 'Tims has a squirrel.'},
+								_1: {
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: true, _1: 'Brett never closes his eyes while typing.'},
+									_1: {
+										ctor: '::',
+										_0: {ctor: '_Tuple2', _0: false, _1: 'Taka hates Kung Fury.'},
+										_1: {
+											ctor: '::',
+											_0: {ctor: '_Tuple2', _0: false, _1: 'Trevor\'s nickname is T-Poverty.'},
+											_1: {
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: true, _1: 'Deise is attacked everytime she uses slack.'},
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}),
+	correctAnswers: _elm_lang$core$Array$empty,
+	wrongAnswers: _elm_lang$core$Array$empty,
+	buttonTrue: {ctor: '_Tuple2', _0: 'True', _1: 'green'},
+	buttonFalse: {ctor: '_Tuple2', _0: 'False', _1: 'red'},
+	instructionsComponent: A2(
+		_evancz$elm_markdown$Markdown$toHtml,
+		{ctor: '[]'},
+		'\n# True or False - Turtle WDI Style\n## How to Play\n  - A question will appear.\n  - Click *True* if you think the answer is true.\n  - Click *False* if you think the answer is false.\n')
+};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$model, view: _camjc$elm_quiz$Quiz$view, update: _camjc$elm_quiz$Quiz$update})();

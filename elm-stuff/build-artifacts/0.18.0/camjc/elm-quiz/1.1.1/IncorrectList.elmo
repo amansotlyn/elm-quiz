@@ -1,0 +1,54 @@
+var _camjc$elm_quiz$IncorrectList$view = function (model) {
+	var notValue = function (item) {
+		return !item.value;
+	};
+	var shouldBeFalse = A2(_elm_lang$core$Array$filter, notValue, model.wrongAnswers);
+	var shouldBeTrue = A2(
+		_elm_lang$core$Array$filter,
+		function (_) {
+			return _.value;
+		},
+		model.wrongAnswers);
+	return _elm_lang$core$Array$isEmpty(model.wrongAnswers) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{ctor: '[]'}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h2,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$style(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'margin', _1: '3rem 0 1rem'},
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Answers you missed'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(_camjc$elm_quiz$CommaList$view, shouldBeTrue, model.buttonTrue),
+						_1: {
+							ctor: '::',
+							_0: A2(_camjc$elm_quiz$CommaList$view, shouldBeFalse, model.buttonFalse),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};

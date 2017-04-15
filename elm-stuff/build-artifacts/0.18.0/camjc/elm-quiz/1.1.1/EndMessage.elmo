@@ -1,0 +1,17 @@
+var _camjc$elm_quiz$EndMessage$endMessage = function (percentage) {
+	return _elm_lang$core$Native_Utils.eq(percentage, 100) ? 'Perfect' : ((_elm_lang$core$Native_Utils.cmp(percentage, 90) > 0) ? 'Excellent' : ((_elm_lang$core$Native_Utils.cmp(percentage, 80) > 0) ? 'Very good' : ((_elm_lang$core$Native_Utils.cmp(percentage, 70) > 0) ? 'Good' : ((_elm_lang$core$Native_Utils.cmp(percentage, 60) > 0) ? 'Nice' : ((_elm_lang$core$Native_Utils.cmp(percentage, 50) > 0) ? 'Alright' : 'Try again')))));
+};
+var _camjc$elm_quiz$EndMessage$view = function (percentage) {
+	return A2(
+		_elm_lang$html$Html$h1,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_camjc$elm_quiz$EndMessage$endMessage(percentage),
+					', you got')),
+			_1: {ctor: '[]'}
+		});
+};

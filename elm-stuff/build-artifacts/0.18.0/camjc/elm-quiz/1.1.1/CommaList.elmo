@@ -1,0 +1,63 @@
+var _camjc$elm_quiz$CommaList$whitespaceToNbsp = function (string) {
+	return A3(_camjc$elm_quiz$StringReplace$replace, ' ', ' ', string);
+};
+var _camjc$elm_quiz$CommaList$getListString = function (array) {
+	return A2(
+		_elm_lang$core$String$join,
+		', ',
+		_elm_lang$core$Array$toList(
+			A2(
+				_elm_lang$core$Array$map,
+				_camjc$elm_quiz$CommaList$whitespaceToNbsp,
+				A2(
+					_elm_lang$core$Array$map,
+					function (_) {
+						return _.label;
+					},
+					array))));
+};
+var _camjc$elm_quiz$CommaList$view = F2(
+	function (listOfLabels, buttonTuple) {
+		return _elm_lang$core$Array$isEmpty(listOfLabels) ? A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{ctor: '[]'}) : A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$style(
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'color',
+							_1: _elm_lang$core$Tuple$second(buttonTuple)
+						},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'line-height', _1: '1.6'},
+							_1: {
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: 'margin-top', _1: '0.5rem'},
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Tuple$first(buttonTuple),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							': ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_camjc$elm_quiz$CommaList$getListString(listOfLabels),
+								'.')))),
+				_1: {ctor: '[]'}
+			});
+	});

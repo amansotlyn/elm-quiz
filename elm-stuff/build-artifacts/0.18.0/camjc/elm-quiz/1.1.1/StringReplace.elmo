@@ -1,0 +1,12 @@
+var _camjc$elm_quiz$StringReplace$replace = F3(
+	function (search, substitution, string) {
+		return A4(
+			_elm_lang$core$Regex$replace,
+			_elm_lang$core$Regex$All,
+			_elm_lang$core$Regex$regex(
+				_elm_lang$core$Regex$escape(search)),
+			function (_p0) {
+				return substitution;
+			},
+			string);
+	});
