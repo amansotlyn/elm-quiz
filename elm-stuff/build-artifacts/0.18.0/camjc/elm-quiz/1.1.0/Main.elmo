@@ -1,4 +1,4 @@
-var _user$project$Main$model = {
+var _camjc$elm_quiz$Main$model = {
 	questionId: -1,
 	questions: _elm_lang$core$Array$fromList(
 		{
@@ -44,12 +44,12 @@ var _user$project$Main$model = {
 		}),
 	correctAnswers: _elm_lang$core$Array$empty,
 	wrongAnswers: _elm_lang$core$Array$empty,
-	buttonTrue: {ctor: '_Tuple2', _0: 'True', _1: 'green'},
-	buttonFalse: {ctor: '_Tuple2', _0: 'False', _1: 'red'},
+	buttonTrue: {ctor: '_Tuple2', _0: 'True', _1: 'navy'},
+	buttonFalse: {ctor: '_Tuple2', _0: 'False', _1: 'orange'},
 	instructionsComponent: A2(
 		_evancz$elm_markdown$Markdown$toHtml,
 		{ctor: '[]'},
-		'\n# True or False - Turtle WDI Style\n## How to Play\n  - A question will appear.\n  - Click *True* if you think the answer is true.\n  - Click *False* if you think the answer is false.\n')
+		'\n# True or False\n## How to Play\n  - A question will appear.\n  - Click *True* if you think the answer is true.\n  - Click *False* if you think the answer is false.\n')
 };
-var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
-	{model: _user$project$Main$model, view: _camjc$elm_quiz$Quiz$view, update: _camjc$elm_quiz$Quiz$update})();
+var _camjc$elm_quiz$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _camjc$elm_quiz$Main$model, view: _camjc$elm_quiz$Quiz$view, update: _camjc$elm_quiz$Quiz$update})();

@@ -15,6 +15,8 @@ getStyle backgroundColor =
         , ( "font-size", "1.5rem" )
         , ( "margin-right", "1rem" )
         , ( "padding", "0.5rem 1rem" )
+        , ( "box-shadow", "3px 3px rgba(150,150,150,0.8)")
+        , ("border-radius", "5px")
         ]
 
 

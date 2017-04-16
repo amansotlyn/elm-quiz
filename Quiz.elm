@@ -153,12 +153,15 @@ view model =
     div
         [ style
             [ ( "margin", "5rem auto" )
-            , ( "max-width", "25rem" )
-            ]
-        ]
+            , ( "max-width", "35rem" )
+            , ( "padding", "1px 15px 15px 15px")
+            , ("background-color", "grey")
+            , ("color", "white")
+            , ("border-radius", "10px")
+            , ("box-shadow", "5px 5px rgba(150,150,150,0.8)")]]
         (if model.questionId == -1 then
             [ model.instructionsComponent
-            , Button.view ( "Start", "green" ) QuizTypes.Start
+            , Button.view ( "Start", "purple" ) QuizTypes.Start
             ]
          else if (getCurrentQuestion model).label == "End" then
             [ EndMessage.view (Helpers.getPercentageCorrect model)

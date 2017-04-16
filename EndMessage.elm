@@ -7,21 +7,21 @@ import QuizTypes
 endMessage : Int -> String
 endMessage percentage =
     if percentage == 100 then
-        "Perfect"
+        "You're a Turtle Expert!"
     else if percentage > 90 then
-        "Excellent"
+        "A Wise Turtle You Are."
     else if percentage > 80 then
-        "Very good"
+        "You should pay more attention to your turtles!"
     else if percentage > 70 then
-        "Good"
+        "Are you sure you're a turtle?"
     else if percentage > 60 then
-        "Nice"
+        "Do you even like turtles?"
     else if percentage > 50 then
-        "Alright"
+        "You must be a Shoebill!"
     else
-        "Try again"
+        "Honestly....just try again..."
 
 
 view : Int -> Html QuizTypes.Msg
 view percentage =
-    h1 [] [ text ((endMessage percentage) ++ ", you got") ]
+    h1 [] [ text ((endMessage percentage) ++ " You got:") ]
