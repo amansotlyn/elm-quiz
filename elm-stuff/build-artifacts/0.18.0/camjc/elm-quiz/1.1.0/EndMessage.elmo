@@ -1,5 +1,5 @@
 var _camjc$elm_quiz$EndMessage$endMessage = function (percentage) {
-	return _elm_lang$core$Native_Utils.eq(percentage, 100) ? 'You\'re a Turtle Expert!' : ((_elm_lang$core$Native_Utils.cmp(percentage, 90) > 0) ? 'A Wise Turtle You Are.' : ((_elm_lang$core$Native_Utils.cmp(percentage, 80) > 0) ? 'You should pay more attention to your turtles!' : ((_elm_lang$core$Native_Utils.cmp(percentage, 70) > 0) ? 'Are you sure you\'re a turtle?' : ((_elm_lang$core$Native_Utils.cmp(percentage, 60) > 0) ? 'Do you even like turtles?' : ((_elm_lang$core$Native_Utils.cmp(percentage, 50) > 0) ? 'You must be a Shoebill!' : 'Honestly....just try again...')))));
+	return _elm_lang$core$Native_Utils.eq(percentage, 100) ? 'You\'re a Turtle Expert!' : ((_elm_lang$core$Native_Utils.cmp(percentage, 90) > -1) ? 'A Wise Turtle You Are.' : ((_elm_lang$core$Native_Utils.cmp(percentage, 80) > -1) ? 'You should pay more attention to your turtles!' : ((_elm_lang$core$Native_Utils.cmp(percentage, 70) > -1) ? 'Are you sure you\'re a turtle?' : ((_elm_lang$core$Native_Utils.cmp(percentage, 60) > -1) ? 'Do you even like turtles?' : ((_elm_lang$core$Native_Utils.cmp(percentage, 50) > -1) ? 'You must be a Shoebill!' : 'Honestly....just try again...')))));
 };
 var _camjc$elm_quiz$EndMessage$view = function (percentage) {
 	return A2(
